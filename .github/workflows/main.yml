@@ -84,6 +84,7 @@ jobs:
         run: |
          mkdir -p ${{ env.OUTPUT_DIR }}
          cd ${{ github.workspace }}/kernel
+         rm -r KernelSU-Next
          
          export PATH="${{ env.CLANG_DIR }}/bin:$PATH"
          curl -LSs "https://raw.githubusercontent.com/KernelSU-Next/KernelSU-Next/next/kernel/setup.sh" | bash -s legacy
