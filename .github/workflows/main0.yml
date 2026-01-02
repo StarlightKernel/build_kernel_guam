@@ -6,15 +6,15 @@ on:
       KERNEL_SOURCE:
         description: 'Kernel source URL'
         required: true
-        default: 'https://github.com/aosp-realm/android_kernel_xiaomi_apollo.git'
+        default: 'https://github.com/alessandroaraujo5/android_kernel_motorola_sm6225.git'
       KERNEL_BRANCH:
         description: 'Kernel branch'
         required: true
-        default: 'main'
+        default: 'lineage-23.0'
       KERNEL_NAME:
         description: 'Kernel/zip name'
         required: true
-        default: 'guamp'
+        default: 'guam'
       CONFIG_FILE:
         description: 'Config file (You can put multiple configs separated by space)'
         required: true
@@ -30,7 +30,7 @@ on:
       KERNELSU:
         description: "Clone URL of your kernelsu"
         required: true
-        default: curl -LSs "https://raw.githubusercontent.com/KernelSU-Next/KernelSU-Next/next/kernel/setup.sh" | bash -s legacy
+        default: curl -LSs "https://raw.githubusercontent.com/SukiSU-Ultra/SukiSU-Ultra/main/kernel/setup.sh" | bash -s builtin
 jobs:
   Build_Kernel:
     runs-on: ubuntu-latest
@@ -86,7 +86,8 @@ jobs:
          cd ${{ github.workspace }}/kernel
          
          export PATH="${{ env.CLANG_DIR }}/bin:$PATH"
-         curl -LSs "https://raw.githubusercontent.com/backslashxx/KernelSU/refs/heads/master/kernel/setup.sh" | bash -s master
+         curl -LSs "https://raw.githubusercontent.com/SukiSU-Ultra/SukiSU-Ultra/main/kernel/setup.sh" | bash -s builtin
+         patch -p1 < kernel-4.19.patch
          
          make_defconfig() {
             start=$(date +"%s")
