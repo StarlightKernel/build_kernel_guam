@@ -88,7 +88,7 @@ jobs:
          rm -r drivers/kernelsu
          
          export PATH="${{ env.CLANG_DIR }}/bin:$PATH"
-         curl -LSs "https://raw.githubusercontent.com/backslashxx/KernelSU/refs/heads/master/kernel/setup.sh" | bash -s builtin
+         curl -LSs "https://raw.githubusercontent.com/backslashxx/KernelSU/refs/heads/master/kernel/setup.sh" | bash -s master
          
          make_defconfig() {
             start=$(date +"%s")
