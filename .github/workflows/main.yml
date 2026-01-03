@@ -30,7 +30,7 @@ on:
       KERNELSU:
         description: "Clone URL of your kernelsu"
         required: true
-        default: curl -LSs "https://raw.githubusercontent.com/KernelSU-Next/KernelSU-Next/next/kernel/setup.sh" | bash -s legacy
+        default: curl -LSs "https://raw.githubusercontent.com/SukiSU-Ultra/SukiSU-Ultra/main/kernel/setup.sh" | bash -s builtin
 jobs:
   Build_Kernel:
     runs-on: ubuntu-latest
@@ -86,7 +86,7 @@ jobs:
          cd ${{ github.workspace }}/kernel
          
          export PATH="${{ env.CLANG_DIR }}/bin:$PATH"
-         curl -LSs "https://raw.githubusercontent.com/rsuntk/KernelSU/main/kernel/setup.sh" | bash -s main
+         curl -LSs "https://raw.githubusercontent.com/SukiSU-Ultra/SukiSU-Ultra/main/kernel/setup.sh" | bash -s builtin
          
          make_defconfig() {
             start=$(date +"%s")
