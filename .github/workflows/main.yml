@@ -88,7 +88,7 @@ jobs:
          export PATH="${{ env.CLANG_DIR }}/bin:$PATH"
          rm -r KernelSU
          rm -r KernelSU-Next
-         curl -LSs "https://raw.githubusercontent.com/KernelSU-Next/KernelSU-Next/next/kernel/setup.sh" | bash -s susfs-legacy-test
+         curl -LSs "https://raw.githubusercontent.com/SukiSU-Ultra/SukiSU-Ultra/main/kernel/setup.sh" | bash -s builtin
          
          make_defconfig() {
             start=$(date +"%s")
